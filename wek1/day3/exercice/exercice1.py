@@ -24,6 +24,6 @@ def find_oldest_cat(cat1, cat2, cat3):
 oldest_cat = find_oldest_cat(cat1, cat2, cat3)
 
 
-print(f"Le chat le plus âgé est {oldest_cat.name}, et a {oldest_cat.age} ans.")
+print(f"Le cat le plus âgé est {oldest_cat.name}, et a {oldest_cat.age} ans.")
 
 

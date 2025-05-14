@@ -60,6 +60,20 @@ SELECT *
 FROM étudiants
 WHERE date_de_naissance >= '2000-01-01';
 
+SELECT prénom, nom_de_famille, date_de_naissance
+FROM étudiants
+ORDER BY nom_de_famille ASC
+LIMIT 4;
+
+SELECT prénom, nom_de_famille, date_de_naissance
+FROM étudiants
+ORDER BY date_de_naissance DESC
+LIMIT 1;
+
+SELECT prénom, nom_de_famille, date_de_naissance
+FROM étudiants
+LIMIT 3 OFFSET 2;
+
 
 
 

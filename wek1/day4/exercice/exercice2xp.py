@@ -27,9 +27,9 @@ class Dog:
             return f"{self.name} et {other_dog.name} sont à égalité!"
 
 
-dog1 = Dog("Rex", 3, 20)
-dog2 = Dog("Bella", 4, 25)
-dog3 = Dog("Max", 2, 18)
+dog1 = Dog("maniwa", 3, 20)
+dog2 = Dog("rossi", 4, 25)
+dog3 = Dog("barbari", 2, 18)
 
 print(dog1.bark())  
 print(f"Vitesse de course de {dog2.name}: {dog2.run_speed()}")  
