@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coût Hôtel</title>
+    <script>
+        function hotelCost() {
+            let nights;
+            const pricePerNight = 140;
+
+            while (true) {
+                const input = prompt("Combien de nuits souhaitez-vous passer à l'hôtel ?");
+
+                if (input === null || input.trim() === "") {
+                    alert("Veuillez entrer un nombre.");
+                    continue;
+                }
+
+                nights = parseInt(input);
+
+                if (isNaN(nights) || nights < 0) {
+                    alert("Entrée invalide. Veuillez entrer un nombre positif.");
+                } else {
+                    break;
+                }
+            }
+
+            const total = nights * pricePerNight;
+            alert(`Le coût total de l'hôtel est de ${total} $`);
+        }
+
+        hotelCost();
+
+      function planeRideCost() {
+    let destination;
+
+    while (true) {
+        destination = prompt("Quelle est votre destination ?");
+
+        // Vérifie si l'utilisateur n'a rien saisi ou a saisi un nombre
+        if (destination === null || destination.trim() === "" || !isNaN(destination)) {
+            alert("Veuillez entrer un nom de ville valide.");
+            continue;
+        } else {
+            destination = destination.trim();
+            break;
+        }
+    }
+
+    // Détermine le prix selon la destination
+    let price;
+    const city = destination.toLowerCase();
+
+    if (city === "london") {
+        price = 183;
+    } else if (city === "paris") {
+        price = 220;
+    } else {
+        price = 300;
+    }
+    alert(`Le prix du billet vers ${destination} est de ${price} $`);
+    return price;
+}
+planeRideCost();
+function rentalCarCost(days) {
+            const pricePerDay = 40;
+            let total = days * pricePerDay;
+
+            if (days > 10) {
+                total *= 0.95; // réduction de 5%
+            }
+
+            return total;
+        }function lancerTest() {
+            let input = prompt("Combien de jours voulez-vous louer la voiture ?");
+            let jours = parseInt(input);
+
+            if (!isNaN(jours) && jours > 0) {
+                let prix = rentalCarCost(jours);
+                alert(`Le prix total est de ${prix.toFixed(2)} $`);
+            } else {
+                alert("Veuillez entrer un nombre valide !");
+            }
+        }
+
+        lancerTest();
+   function totalVacationCost() {
+      
+
+      let nights;
+      while (true) {
+        nights = parseInt(prompt("Combien de nuits à l'hôtel ?"));
+        if (!isNaN(nights) && nights > 0) break;
+        alert("Veuillez entrer un nombre valide.");
+      }
+
+      let days;
+      while (true) {
+        days = parseInt(prompt("Combien de jours souhaitez-vous louer la voiture ?"));
+        if (!isNaN(days) && days > 0) break;
+        alert("Veuillez entrer un nombre valide.");
+      }
+
+      let destination;
+      while (true) {
+        destination = prompt("Quelle est votre destination ?").trim();
+        if (destination !== "") break;
+        alert("Veuillez entrer une destination valide.");
+      }
+
+      
+      const hotel = hotelCost(nights);
+      const car = rentalCarCost(days);
+      const plane = planeRideCost(destination);
+
+      const total = hotel + car + plane;
+
+      
+      alert(`Voici le coût de vos vacances :
+- Coût de l'hôtel : ${hotel} $
+- Coût de la location de voiture : ${car.toFixed(2)} $
+- Coût des billets d'avion : ${plane} $
+
+Total : ${total.toFixed(2)} $`);
+    }
+
+    // Appel automatique de la fonction
+    totalVacationCost();
+
+    </script>
+</head>
+<body>
+</body>
+</html>
+
