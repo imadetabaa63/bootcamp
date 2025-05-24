@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>exercice2 XP GOLD</title>
+</head>
+<body>
+<script>
+ let guestList = {
+  randy: "Germany",
+  karla: "France",
+  wendy: "Japan",
+  norman: "England",
+  sam: "Argentina"
+};
+
+
+let studentName = prompt("What is your name?").toLowerCase(); 
+
+if (studentName in guestList) {
+  console.log(`Hi! I'm ${studentName}, and I'm from ${guestList[studentName]}.`);
+} else {
+  console.log("Hi! I'm a guest.");
+}
+
+
+
+
+</script>
+</body>
+</html>

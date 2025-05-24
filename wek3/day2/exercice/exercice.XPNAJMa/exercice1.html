@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>exercice 1 </title>
+</head>
+<body>
+	<script>
+		
+let personne1 = {
+    nom: "Ali Ben",
+    masse: 75, 
+    hauteur: 1.75, 
+
+    calculIMC: function () {
+        return this.masse / (this.hauteur * this.hauteur);
+    }
+};
+
+
+let personne2 = {
+    nom: "Sara Youssef",
+    masse: 68,
+    hauteur: 1.65,
+
+    calculIMC: function () {
+        return this.masse / (this.hauteur * this.hauteur);
+    }
+};
+
+
+function comparerIMC(p1, p2) {
+    let imc1 = p1.calculIMC();
+    let imc2 = p2.calculIMC();
+
+    console.log(`${p1.nom} a un IMC de : ${imc1.toFixed(2)}`);
+    console.log(`${p2.nom} a un IMC de : ${imc2.toFixed(2)}`);
+
+    if (imc1 > imc2) {
+        console.log(`${p1.nom} a l’IMC le plus élevé.`);
+    } else if (imc2 > imc1) {
+        console.log(`${p2.nom} a l’IMC le plus élevé.`);
+    } else {
+        console.log(`Les deux ont le même IMC.`);
+    }
+}
+
+
+comparerIMC(personne1, personne2);
+
+
+
+	</script>
+
+</body>
+</html>

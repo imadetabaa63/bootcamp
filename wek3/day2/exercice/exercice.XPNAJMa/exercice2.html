@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>exercice2</title>
+</head>
+<body>
+	<script>
+		
+		
+function findAvg(gradesList) {
+    if (gradesList.length === 0) {
+        console.log("Aucune note fournie.");
+        return;
+    }
+
+    let sum = 0;
+    for (let i = 0; i < gradesList.length; i++) {
+        sum += gradesList[i];
+    }
+
+    let average = sum / gradesList.length;
+    console.log("La moyenne est :", average);
+
+    
+    checkResult(average);
+}
+
+
+function checkResult(average) {
+    if (average > 65) {
+        console.log("Félicitations ! Vous avez réussi 👍");
+    } else {
+        console.log("Désolé, vous avez échoué. Vous devez recommencer le cours. ❌");
+    }
+}
+   let notes = [63,50,70];
+   findAvg(notes);
+
+
+	</script>
+
+
+</body>
+</html>

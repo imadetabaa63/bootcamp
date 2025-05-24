@@ -14,10 +14,10 @@ const allBooks = [
   }
 ];
 
-// Sélection de la section
+
 const listSection = document.querySelector('.listBooks');
 
-// Affichage des livres
+
 allBooks.forEach(book => {
   const bookDiv = document.createElement('div');
   bookDiv.classList.add('book');
