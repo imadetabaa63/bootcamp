@@ -1,0 +1,15 @@
+<script>
+function isOmnipresent(arr, val) {
+  for (let i = 0; i < arr.length; i++) {
+    // Vérifie si val n'est pas dans le sous-tableau arr[i]
+    if (!arr[i].includes(val)) {
+      return false; // si un seul sous-tableau ne contient pas val, ce n'est pas omniprésent
+    }
+  }
+  return true; // si val est dans tous les sous-tableaux
+}
+console.log(isOmnipresent([[1, 1], [1, 3], [5, 1], [6, 1]], 1));
+console.log(isOmnipresent([[1, 1], [1, 3], [5, 1], [6, 1]], 6)); 
+
+
+</script>

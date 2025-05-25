@@ -1,0 +1,21 @@
+<script>
+    function inverseCasse(chaine) {
+  let resultat = "";
+
+  for (let i = 0; i < chaine.length; i++) {
+    let char = chaine[i];
+
+    
+    if (char === char.toUpperCase()) {
+      resultat += char.toLowerCase(); 
+    } else {
+      resultat += char.toUpperCase(); 
+    }
+  }
+
+  return resultat;
+}
+console.log(inverseCasse("The Quick Brown Fox")); 
+// Résultat : "tHE qUICK bROWN fOX"
+
+</script>

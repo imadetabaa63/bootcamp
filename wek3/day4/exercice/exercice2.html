@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulaire</title>
+</head>
+<body>
+  <form id="form">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="firstname" placeholder="Prénom"><br>
+
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lastname" placeholder="Nom"><br><br>
+
+    <input type="submit" value="Submit" id="submit">
+  </form> 
+
+  <ul class="usersAnswer">
+  	 <li>Jean</li>
+     <li>Dupont</li>
+  </ul>
+
+  <script>
+    // Récupérer les éléments
+    let formulaire = document.querySelector("form");
+    console.log(formulaire);
+
+    let firstNameInput = document.getElementById("fname");
+    let lastNameInput = document.getElementById("lname");
+
+    console.log(firstNameInput);
+    console.log(lastNameInput);
+
+    // Ajouter l'écouteur sur le bon ID sans espace
+    document.getElementById("form").addEventListener("submit", function(event) {
+      event.preventDefault(); 
+
+      let fname = firstNameInput.value.trim();
+      let lname = lastNameInput.value.trim();
+
+      if (fname === "" || lname === "") {
+        alert("Veuillez remplir tous les champs !");
+      } else {
+        console.log("Prénom :", fname);
+        console.log("Nom :", lname);
+      }
+    
+    // Cibler la <ul>
+      let ul = document.querySelector(".usersAnswer");
+
+      // Vider les anciennes réponses si nécessaires
+      ul.innerHTML = "";
+
+      // Créer et ajouter les <li>
+      let li1 = document.createElement("li");
+      li1.textContent = fname;
+      ul.appendChild(li1);
+
+      let li2 = document.createElement("li");
+      li2.textContent = lname;
+      ul.appendChild(li2);
+    });
+
+  </script>
+</body>
+</html>
