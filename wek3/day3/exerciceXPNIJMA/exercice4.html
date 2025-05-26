@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function biggestNumberInArray(arrayNumber) {
+  // Filtrer les éléments numériques
+  const onlyNumbers = arrayNumber.filter(item => typeof item === 'number');
+
+  // Si aucun nombre trouvé, retourner 0
+  if (onlyNumbers.length === 0) {
+    return 0;
+  }
+
+  // Retourner le plus grand nombre
+  return Math.max(...onlyNumbers);
+}
+const array = [-1, 0, 3, 100, 99, 2, 99];
+const array2 = ['a', 3, 4, 2];
+const array3 = [];
+
+console.log(biggestNumberInArray(array));   // ➜ 100
+console.log(biggestNumberInArray(array2));  // ➜ 4
+console.log(biggestNumberInArray(array3));  // ➜ 0
+
+    </script>
+</body>
+</html>

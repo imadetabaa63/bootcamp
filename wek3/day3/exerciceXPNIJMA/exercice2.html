@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function capitalize(str) {
+  let evenCaps = '';
+  let oddCaps = '';
+
+  for (let i = 0; i < str.length; i++) {
+    if (i % 2 === 0) {
+      // index زوجي
+      evenCaps += str[i].toUpperCase();
+      oddCaps += str[i];
+    } else {
+      // index فردي
+      evenCaps += str[i];
+      oddCaps += str[i].toUpperCase();
+    }
+  }
+
+  return [evenCaps, oddCaps];
+}
+console.log(capitalize("abcdef"));
+// ➜ ['AbCdEf', 'aBcDeF']
+</script>
+</body>
+</html>
