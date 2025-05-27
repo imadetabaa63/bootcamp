@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bienvenue</title>
+  <style>
+    nav {
+      background-color: #007bff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .user-info img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h2>MonSite</h2>
+    <!-- Le div contenant l'utilisateur sera injecté ici -->
+  </nav>
+
+  <script>
+    // Fonction auto-invoquée
+(function(username) {
+  // Crée le conteneur
+  const userDiv = document.createElement('div');
+  userDiv.className = 'user-info';
+
+  // Crée l'image de profil
+  const userImg = document.createElement('img');
+  userImg.src = 'https://i.pravatar.cc/40'; // image aléatoire de profil
+  userImg.alt = 'User profile';
+
+  // Crée le nom d'utilisateur
+  const nameSpan = document.createElement('span');
+  nameSpan.textContent = username;
+
+  // Ajoute tout dans le div
+  userDiv.appendChild(userImg);
+  userDiv.appendChild(nameSpan);
+
+  // Ajoute dans la navbar
+  const navbar = document.querySelector('nav');
+  navbar.appendChild(userDiv);
+})('John');
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Auto-invoquante</title>
+</head>
+<body>
+  <div id="result"></div>
+
+  <script>
+    // Fonction auto-invoquante avec 4 arguments
+    (function(children, partner, location, jobTitle) {
+      const message = `You will be a ${jobTitle} in ${location}, and married to ${partner} with ${children} kids.`;
+      document.getElementById("result").textContent = message;
+    })(3, "Alex", "Canada", "Web Developer");
+  </script>
+</body>
+</html>
