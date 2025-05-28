@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+              /// exercice #1#
+        const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+
+// Afficher les choix
+colors.forEach((color, index) => {
+  console.log(`Le choix #${index + 1} est ${color}.`);
+});
+
+// Vérification 
+console.log(colors.includes("Violet") ? "Yeah" : "No...");
+
+ // exercice #2#
+        const colorss = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+const ordinal = ["th", "st", "nd", "rd"]; 
+
+colors.map((color, index) => {
+  const position = index + 1;
+  
+  const suffix = (position === 1) ? ordinal[1] :
+                 (position === 2) ? ordinal[2] :
+                 (position === 3) ? ordinal[3] :
+                 ordinal[0];
+  
+  console.log(`${position}${suffix} choice is ${color}.`);
+});
+
+//exercice #3#
+//1
+const fruits = ["apple", "orange"];
+const vegetables = ["carrot", "potato"];
+
+const result = ['bread', ...vegetables, 'chicken', ...fruits];
+console.log(result);
+//  On obtient un nouveau tableau contenant tous les éléments combinés.
+
+//2
+const country = "USA";
+console.log([...country]);
+//Le spread operator ...country décompose la chaîne "USA" en caractères individuels.
+
+/*Bonus
+let newArray = [...[,,]];
+console.log(newArray); */
+//les éléments vides dans un tableau deviennent des undefined lorsqu’on utilise ...
+
+
+    </script>
+</body>
+</html>
