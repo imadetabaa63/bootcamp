@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        [1, 2, 3].map(num => {
+  if (typeof num === 'number') return num * 2;
+  return ;
+});
+/*map() va itérer sur chaque élément du tableau [1, 2, 3]
+Si oui → retourne num * 2
+
+Sinon → retourne undefined (car return; sans valeur = undefined)
+donc
+num = 1 → retourne 2
+
+num = 2 → retourne 4
+
+num = 3 → retourne 6 */
+//------------------------------------------------------
+// exercice #2#
+// On a un tableau de tableaux : [[0, 1], [2, 3]]
+// On utilise la méthode reduce() pour les fusionner dans un seul tableau
+// La valeur initiale de l'accumulateur (acc) est [1, 2]
+[[0, 1], [2, 3]].reduce(
+  (acc, cur) => {
+    // À chaque itération, on concatène l'élément courant (cur) à l'accumulateur (acc)
+    // 1ère itération : acc = [1, 2], cur = [0, 1] → acc.concat(cur) = [1, 2, 0, 1]
+    // 2ème itération : acc = [1, 2, 0, 1], cur = [2, 3] → acc.concat(cur) = [1, 2, 0, 1, 2, 3]
+    return acc.concat(cur);
+  },
+  [1, 2], // Valeur initiale de l'accumulateur
+);
+// Résultat final [1, 2, 0, 1, 2, 3]
+//-----------------------------------------------
+ //exercice  #3#
+
+
+const arrayNum = [1, 2, 4, 5, 8, 9];
+const newArray = arrayNum.map((num, i) => {
+    console.log(num, i);
+    alert(num);
+    return num * 2;
+})
+// valeur de i lors de l’exécution :1,2,3,4,5
+
+    </script>
+</body>
+</html>

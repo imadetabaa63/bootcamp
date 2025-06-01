@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // exercice #4#
+        const curriedSum = (a) => (b) => a + b
+const add5 = curriedSum(5)
+add5(12)
+/* curriedSum est une fonction curryfiée : elle prend un argument a et retourne une fonction qui prend un argument b et renvoie a + b.
+
+const add5 = curriedSum(5); crée une nouvelle fonction où a est fixé à 5. Donc add5 est équivalent à (b) => 5 + b.
+
+add5(12); appelle cette fonction avec b = 12, donc ça retourne 5 + 12 = 17.
+
+*/
+//-------------------------------------------------------------
+// exercice #5#
+const compose = (f, g) => (a) => f(g(a));
+const add1 = (num) => num + 1;
+const add6 = (num) => num + 5;
+compose(add1, add6)(10);
+/* compose est une fonction qui prend deux fonctions f et g, et retourne une nouvelle fonction qui prend un argument a.
+
+Cette nouvelle fonction applique d'abord g à a, puis applique f au résultat de g(a).
+
+Ici, compose(add1, add5)(10) signifie : on applique add5 à 10, ce qui donne 10 + 5 = 15, puis on applique add1 à 15, ce qui donne 15 + 1 = 16.
+
+*/
+
+    </script>
+</body>
+</html>

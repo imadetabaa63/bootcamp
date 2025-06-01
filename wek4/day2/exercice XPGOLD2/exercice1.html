@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // exercice #1#
+        const numbers = [1, 2, 3, 4, 5];
+
+let sum = 0;
+
+numbers.forEach(function(num) {
+  sum += num;
+});
+
+console.log("La somme des éléments est :", sum);
+// exercice #2#
+const number = [1, 2, 2, 3, 4, 4, 5];
+const uniqueNumber = number.filter((value, index, array) => {
+  return array.indexOf(value) === index;
+});
+console.log(uniqueNumber); // [1, 2, 3, 4, 5]
+// exercice #3#
+function cleanArray(arr) {
+  return arr.filter(value => {
+    return value !== null &&
+           value !== 0 &&
+           value !== "" &&
+           value !== false &&
+           value !== undefined &&
+           !Number.isNaN(value) === true;
+  });
+}
+
+// Exemple d’utilisation
+const sampleArray = [NaN, 0, 15, false, -22, '', undefined, 47, null];
+const cleanedArray = cleanArray(sampleArray);
+console.log(cleanedArray); // [15, -22, 47]
+
+// exercice #4#
+function repeat(str, n = 1) {
+  let result = "";
+  for (let i = 0; i < n; i++) {
+    result += str;
+  }
+  return result;
+}
+
+// Exemple d’utilisation :
+console.log(repeat('Ha!', 3));  // "Ha!Ha!Ha!"
+
+
+
+
+    </script>
+    
+</body>
+</html>

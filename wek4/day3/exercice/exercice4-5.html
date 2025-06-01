@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //exercice #4#
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+const member = new Person('John');
+console.log(typeof member);
+/*
+class Person : définit une classe Person avec un constructeur qui prend un paramètre name et l'assigne à this.name.
+
+const member = new Person('John'); : crée une nouvelle instance de la classe Person. member est donc un objet.
+
+console.log(typeof member); retourne une chaîne indiquant le type primitif d'une valeur.
+
+*/
+//exercice  #5#
+class Dog {
+  constructor(name) {
+    this.name = name;
+  }
+};
+/* 1 - Erreur : appel à 'this' avant 'super'
+class Labrador extends Dog {
+  constructor(name, size) {
+    this.size = size;   'this' ne peut pas être utilisé avant l’appel à 'super'
+  }
+};
+*/
+// 2 - ✅ Correct : appel à 'super' avant d'utiliser 'this'
+class Labrador extends Dog {
+  constructor(name, size) {
+    super(name);       // Appel du constructeur de Dog
+    this.size = size;  // Initialisation spécifique à Labrador
+  }
+};
+/*
+ 3 - Erreur : 'name' n'est pas défini
+class Labrador extends Dog {
+  constructor(size) {
+    super(name);        'name' n'existe pas ici
+    this.size = size;
+  }
+};
+------------------------------------------------------
+ 4- : 'super' est requis avant d'utiliser 'this'
+class Labrador extends Dog {
+  constructor(name, size) {
+    this.name = name;    Utilisation de 'this' avant 'super'
+    this.size = size;
+  }
+};
+*/
+
+
+
+    </script>
+</body>
+</html>

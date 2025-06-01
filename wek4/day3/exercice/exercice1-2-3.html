@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ // Déclaration d'un objet "person" contenant des informations personnelles
+const person = {
+    name: 'John Doe',  // Nom de la personne
+    age: 25,           // Âge de la personne
+    location: {        // Objet imbriqué représentant la localisation
+        country: 'Canada',         // Pays
+        city: 'Vancouver',         // Ville
+        coordinates: [49.2827, -123.1207] // Coordonnées géographiques : latitude et longitude
+    }
+}
+
+// Destructuration de l'objet "person"
+// On extrait directement :
+// - le nom (name)
+// - le pays (country), la ville (city)
+// - la latitude (lat) et la longitude (lng) à partir du tableau coordinates
+const {name, location: {country, city, coordinates: [lat, lng]}} = person;
+
+// Affichage dans la console à l'aide d'un template string
+// On insère les variables extraites dans une phrase formatée
+console.log(`I am ${name} from ${city}, ${country}. Latitude(${lat}), Longitude(${lng})`);
+
+// Résultat attendu dans la console :
+// I am John Doe from Vancouver, Canada. Latitude(49.2827), Longitude(-123.1207)
+//--------------------------------------------------------------
+//exercice #2#
+function displayStudentInfo(objUser){
+    //destructuring
+}
+
+displayStudentInfo({first: 'Elie', last:'Schoppik'});
+function displayStudentInfo({first, last}) {
+    return `Your full name is ${first} ${last}`;
+}
+console.log(displayStudentInfo({first: 'Elie', last: 'Schoppik'}));
+//-----------------------------------------------------
+//exercice #3#
+const users = { user1: 18273, user2: 92833, user3: 90315 };
+
+const usersArray = Object.entries(users);
+console.log("Étape 1 :", usersArray);
+
+
+const updatedUsers = usersArray.map(([key, value]) => [key, value * 2]);
+console.log("Étape 2 :", updatedUsers);
+
+    </script>
+</body>
+</html>

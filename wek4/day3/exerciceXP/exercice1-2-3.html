@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //exercice #1#
+        
+function printFullName({ first, last }) {
+  return `Your full name is ${first} ${last}`;
+}
+
+console.log(printFullName({ first: 'Elie', last: 'Schoppik' }));
+//--------------------------------------------------------------------
+//exercice #2#
+function keysAndValues(obj) {
+  
+  const keys = Object.keys(obj).sort();
+
+  
+  const values = keys.map(key => obj[key]);
+
+  
+  return [keys, values];
+}
+console.log(keysAndValues({ a: 1, b: 2, c: 3 }));
+
+
+console.log(keysAndValues({ a: "Apple", b: "Microsoft", c: "Google" }));
+
+
+console.log(keysAndValues({ key1: true, key2: false, key3: undefined }));
+//---------------------------------------------------------------------
+//exercice #3#
+// Définition de la classe Counter
+class Counter {
+  constructor() {
+    this.count = 0; // Initialisation du compteur à 0
+  }
+
+  increment() {
+    this.count++; // Incrémente la valeur du compteur
+  }
+}
+
+// Création d'une instance de Counter
+const counterOne = new Counter();
+
+// Incrémentation deux fois via counterOne
+counterOne.increment(); // count = 1
+counterOne.increment(); // count = 2
+
+// counterTwo référence le même objet que counterOne
+const counterTwo = counterOne;
+
+// Incrémentation via counterTwo (qui est le même objet)
+counterTwo.increment(); // count = 3
+
+// Affichage de la valeur du compteur via counterOne
+console.log(counterOne.count); // Résultat : 3
+
+ </script>
+    
+</body>
+</html>

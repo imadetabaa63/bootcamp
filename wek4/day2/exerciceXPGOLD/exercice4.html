@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       // Exercice 4 : Tableaux imbriqués
+
+// Exercice 4 : Tableaux imbriqués
+
+
+const array = [[1],[2],[3],[[[4]]],[[[5]]]];
+const result = array.flat(2);
+console.log("Résultat  :", result);  // [1, 2, 3, [4], [5]]
+
+
+const greeting = [["Hello", "young", "grasshopper!"], ["you", "are"], ["learning", "fast!"]];
+const sentences = greeting.map(words => words.join(" "));
+console.log("Résultat  :", sentences);  // ["Hello young grasshopper!", "you are", "learning fast!"]
+
+
+const fullSentence = sentences.join(" ");
+console.log("Résultat  :", fullSentence);  // "Hello young grasshopper! you are learning fast!"
+
+
+const trapped = [[[[[[[[[[[[[[[[[[[[[[[[[[3]]]]]]]]]]]]]]]]]]]]]]]]]];
+const freed = trapped.flat(Infinity);
+console.log("Résultat :", freed);  // [3]
+
+
+    </script>
+</body>
+</html>

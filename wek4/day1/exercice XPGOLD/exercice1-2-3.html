@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // exercie #1#
+    /*
+   let landscape = function() {
+  let result = ""; // Chaîne vide initiale pour construire le paysage.
+
+  // Fonction interne pour ajouter une surface plate (_) répétée x fois.
+  let flat = function(x) {
+    for(let count = 0; count < x; count++){
+      result = result + "_"; // Ajoute "_" à la chaîne à chaque itération.
+    }
+  }
+
+  // Fonction interne pour ajouter une montagne.
+  // Elle commence par "/", puis ajoute x fois "'", puis finit par "\"
+  let mountain = function(x) {
+    result = result + "/"; // Début de la montagne.
+    for(let counter = 0; counter < x; counter++){
+      result = result + "'"; // Ajoute x fois "'" au sommet.
+    }
+    result = result + "\\"; // Fin de la montagne (échappement du caractère "\")
+  }
+
+  flat(4);      // Ajoute 4 "_"
+  mountain(4);  // Ajoute "/''''\\"
+  flat(4);      // Ajoute encore 4 "_"
+
+  return result; // Retourne la chaîne finale représentant le paysage.
+}
+
+landscape(); */ // Appel de la fonction.
+//---2----------------------------------------------------------
+const landscape = () => {
+  let result = "";
+
+  const flat = x => {
+    for(let count = 0; count < x; count++) {
+      result += "_";
+    }
+  };
+
+  const mountain = x => {
+    result += "/";
+    for(let counter = 0; counter < x; counter++) {
+      result += "'";
+    }
+    result += "\\";
+  };
+
+  flat(4);
+  mountain(4);
+  flat(4);
+
+  return result;
+};
+
+console.log(landscape()); 
+
+//-------------------------------------
+// exercice #2#
+const addTo = x => y => x + y;
+const addToTen = addTo(10);
+addToTen(3);
+/*
+addTo est une fonction fléchée imbriquée 
+
+Elle prend un premier argument x, puis retourne une autre fonction qui prend y.
+
+Cette seconde fonction retourne la somme de x et y
+
+On appelle addTo(10)  cela crée une nouvelle fonction qui ajoute 10 à n’importe quel nombre.
+
+addToTen est donc une fonction équivalente à y => 10 + y.
+
+On appelle la fonction avec 3.
+
+Cela exécute 10 + 3, donc le résultat est 13.
+*/
+//-------------------------------------------------------
+// exercice #3#
+const curriedSum = (a) => (b) => a + b
+curriedSum(30)(1)
+/*Ceci est une fonction curryfiée : une fonction fléchée imbriquée.
+
+Elle prend un premier paramètre a et retourne une autre fonction qui prend b.
+
+La fonction retournée renvoie la somme de a + b.
+curriedSum(30) retourne une fonction équivalente à (b) => 30 + b.
+
+Puis on appelle cette fonction avec 1.
+
+Cela fait 30 + 1 → Résultat = 31
+
+ */
+  </script>
+</body>
+</html>
