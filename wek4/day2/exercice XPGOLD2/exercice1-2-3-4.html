@@ -17,12 +17,14 @@ numbers.forEach(function(num) {
 });
 
 console.log("La somme des éléments est :", sum);
+//-------------------------------------------------------------------
 // exercice #2#
 const number = [1, 2, 2, 3, 4, 4, 5];
 const uniqueNumber = number.filter((value, index, array) => {
   return array.indexOf(value) === index;
 });
 console.log(uniqueNumber); // [1, 2, 3, 4, 5]
+//-------------------------------------------------------------------
 // exercice #3#
 function cleanArray(arr) {
   return arr.filter(value => {
@@ -39,7 +41,7 @@ function cleanArray(arr) {
 const sampleArray = [NaN, 0, 15, false, -22, '', undefined, 47, null];
 const cleanedArray = cleanArray(sampleArray);
 console.log(cleanedArray); // [15, -22, 47]
-
+//-----------------------------------------------------------------
 // exercice #4#
 function repeat(str, n = 1) {
   let result = "";

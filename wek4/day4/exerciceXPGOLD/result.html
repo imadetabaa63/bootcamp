@@ -1,0 +1,26 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Résultat</title>
+</head>
+<body>
+  <h2>Données envoyées</h2>
+
+  <section id="resultSection">
+  
+  </section>
+
+  <script>
+    
+    const params = new URLSearchParams(window.location.search);
+    const firstName = params.get("firstName");
+    const lastName = params.get("lastName");
+
+    
+    const section = document.getElementById("resultSection");
+    section.textContent = `Bonjour ${firstName} ${lastName} !`;
+  </script>
+</body>
+</html>

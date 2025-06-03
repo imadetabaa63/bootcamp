@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulaire POST</title>
+</head>
+<body>
+  <h2>Formulaire de contact</h2>
+
+  <!-- Formulaire soumis en POST -->
+  <form action="" method="post">
+    <label for="name">name:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="message">comments :</label><br>
+    <textarea id="message" name="message" rows="5" cols="30"></textarea><br><br>
+
+    <input type="submit" value="send">
+    <!--Où apparaîtront les données envoyées avec method="POST" ?
+    Dans le corps de la requête HTTP-->
+  </form>
+</body>
+</html>
