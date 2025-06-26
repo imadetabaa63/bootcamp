@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Mon premier post",
+    "content": "Ceci est le contenu de mon premier post."
+  },
+  {
+    "id": 2,
+    "title": "Un autre post",
+    "content": "Voici un autre exemple de contenu."
+  },
+  {
+    "id": 3,
+    "title": "Encore un post",
+    "content": "On continue avec un troisième post."
+  }
+]

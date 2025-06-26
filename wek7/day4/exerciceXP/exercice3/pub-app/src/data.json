@@ -1,0 +1,19 @@
+{
+  "SocialMedias": ["Facebook", "Twitter", "LinkedIn", "Instagram"],
+  "Skills": {
+    "Frontend": ["HTML", "CSS", "JavaScript", "React"],
+    "Backend": ["Node.js", "Express", "MongoDB"]
+  },
+  "Experiences": [
+    {
+      "company": "OpenAI",
+      "role": "Développeur IA",
+      "years": "2022-2024"
+    },
+    {
+      "company": "Google",
+      "role": "Développeur Web",
+      "years": "2020-2022"
+    }
+  ]
+}
