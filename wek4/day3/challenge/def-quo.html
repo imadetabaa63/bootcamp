@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. Création de la classe
+class Video {
+  constructor(title, uploader, time) {
+    this.title = title;
+    this.uploader = uploader;
+    this.time = time;
+  }
+
+  // 2. Méthode watch()
+  watch() {
+    console.log(`${this.uploader} watched all ${this.time} seconds of "${this.title}"!`);
+  }
+}
+
+// 3. Création de 2 instances
+const video1 = new Video("Learning JavaScript", "Alice", 300);
+video1.watch(); // Alice watched all 300 seconds of "Learning JavaScript"!
+
+const video2 = new Video("Cooking Pasta", "Bob", 180);
+video2.watch(); // Bob watched all 180 seconds of "Cooking Pasta"!
+
+
+// 4. BONUS : Créer un tableau de données
+const videoData = [
+  { title: "Nature Documentary", uploader: "Charlie", time: 600 },
+  { title: "React Tutorial", uploader: "Dana", time: 900 },
+  { title: "Funny Cats Compilation", uploader: "Eva", time: 240 },
+  { title: "SpaceX Launch", uploader: "Frank", time: 720 },
+  { title: "Music Video", uploader: "Grace", time: 180 }
+];
+
+// 5. BONUS : Instancier les vidéos avec une boucle
+const videoList = [];
+
+videoData.forEach(data => {
+  const vid = new Video(data.title, data.uploader, data.time);
+  videoList.push(vid);
+  vid.watch(); // Affiche chaque vidéo regardée
+});
+
+    </script>
+    
+</body>
+</html>
