@@ -1,17 +1,27 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Coloring Squares</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <h1>Coloring Squares</h1>
-  <div class="controls">
-    <input type="color" id="colorPicker" value="#3498db">
-    <button id="resetButton">Reset</button>
+
+  <div class="colors">
+    <div class="color" style="background-color: red;"></div>
+    <div class="color" style="background-color: orange;"></div>
+    <div class="color" style="background-color: yellow;"></div>
+    <div class="color" style="background-color: green;"></div>
+    <div class="color" style="background-color: blue;"></div>
+    <div class="color" style="background-color: purple;"></div>
+    <div class="color" style="background-color: black;"></div>
+    <div class="color" style="background-color: white; border: 1px solid #ccc;"></div>
   </div>
-  <div class="grid-container" id="grid"></div>
+  <button id="clearBtn">🧹 Clear Grid</button>
+
+  <div id="grid"></div>
 
   <script src="script.js"></script>
 </body>

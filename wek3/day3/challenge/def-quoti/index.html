@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Système Solaire</title>
+  <style>
+    body {
+      background-color: black;
+      padding: 20px;
+      font-family: sans-serif;
+    }
+
+    .listPlanets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .planet {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 100px;
+      color: white;
+      font-weight: bold;
+      position: relative;
+      border: 2px solid white;
+    }
+
+    .moon {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: rgb(237, 237, 237);
+      border: 2px solid red;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="color:white;">Système solaire</h1>
+  <section class="listPlanets"></section>
+
+  <!-- Lien vers ton fichier JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>

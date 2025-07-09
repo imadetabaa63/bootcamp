@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mad Libs Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input {
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 300px;
+    }
+
+    button {
+      margin-right: 10px;
+      padding: 8px 12px;
+    }
+
+    #story {
+      margin-top: 20px;
+      font-weight: bold;
+      color: darkblue;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mad Libs Game</h1>
+
+  <form id="libform">
+    <label for="noun">Noun:</label>
+    <input type="text" id="noun">
+
+    <label for="adjective">Adjective:</label>
+    <input type="text" id="adjective">
+
+    <label for="person">Someone's Name:</label>
+    <input type="text" id="person">
+
+    <label for="verb">Verb:</label>
+    <input type="text" id="verb">
+
+    <label for="place">A Place:</label>
+    <input type="text" id="place">
+
+    <br><br>
+    <button id="lib-button">Create Story</button>
+    <button type="button" id="random-button">Random Story 🎲</button>
+  </form>
+
+  <p><strong>Generated story:</strong> <span id="story"></span></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
