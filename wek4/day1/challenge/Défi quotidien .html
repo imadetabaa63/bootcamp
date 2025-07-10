@@ -28,24 +28,24 @@ const displayGroceries = () => {
 
 displayGroceries(); // Affiche : pear, apple, banana
 
-//  Fonction fléchée pour cloner les données et tester les effets
-const cloneGroceries = () => {
-  // Pass By Value (valeurs primitives)
-  let user = client; // ici, c'est une copie indépendante (string = primitive)
-  client = "Betty";
-  console.log("client :", client); // Betty
-  console.log("user :", user);     // John => PAS modifié (copie indépendante)
 
-  // Pass By Reference (objets)
+const cloneGroceries = () => {
+  
+  let user = client; 
+  client = "Betty";
+  console.log("client :", client); 
+  console.log("user :", user);    
+
+  
   let shopping = groceries;
 
-  // Modification directe sur l'objet (référence partagée)
+  
   shopping.totalPrice = "35$";
-  console.log("groceries.totalPrice :", groceries.totalPrice); // "35$" => MODIFIÉ
+  console.log("groceries.totalPrice :", groceries.totalPrice); 
 
-  // Modification d'un sous-objet
+  
   shopping.other.paid = false;
-  console.log("groceries.other.paid :", groceries.other.paid); // false => MODIFIÉ
+  console.log("groceries.other.paid :", groceries.other.paid); 
 };
 
 cloneGroceries();

@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: 'SEGA LOGO FONT', sans-serif;
+  text-align: center;
+  background-image: url('https://github.com/devtlv/studentsGitHub/blob/master/JS/Week%204/Day5/Mini%20Projects/Mini%20Project%201%20(Robots)/circuit-pattern.png?raw=true');
+  background-size: cover;
+  color: white;
+}
+
+.title {
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+#search {
+  padding: 12px;
+  font-size: 16px;
+  margin: 20px auto;
+  border-radius: 8px;
+  width: 250px;
+  border: none;
+}
+
+#robots-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.robot-card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.robot-card:hover {
+  transform: scale(1.05);
+}
+
+.robot-card img {
+  width: 100%;
+  border-radius: 10px;
+}

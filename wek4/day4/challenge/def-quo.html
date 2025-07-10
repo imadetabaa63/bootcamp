@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulaire JSON</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input {
+      margin-bottom: 10px;
+      display: block;
+    }
+    #result {
+      margin-top: 20px;
+      font-family: monospace;
+      background-color: #f4f4f4;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Formulaire Utilisateur</h2>
+
+  <form id="userForm">
+    <label for="firstname">Prénom:</label>
+    <input type="text" id="firstname" required>
+
+    <label for="lastname">Nom:</label>
+    <input type="text" id="lastname" required>
+
+    <button type="submit">Envoyer</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const form = document.getElementById("userForm");
+    const result = document.getElementById("result");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); 
+
+      
+      const firstname = document.getElementById("firstname").value;
+      const lastname = document.getElementById("lastname").value;
+
+      
+      const userData = {
+        firstName: firstname,
+        lastName: lastname
+      };
+
+      
+      result.textContent = JSON.stringify(userData, null, 2);
+    });
+  </script>
+
+</body>
+</html>

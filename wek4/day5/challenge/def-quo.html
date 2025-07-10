@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Vérificateur d'Anagrammes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+
+    input {
+      margin: 10px;
+      padding: 8px;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔤 Vérificateur d'Anagrammes</h1>
+
+  <input type="text" id="string1" placeholder="Entrez le premier mot">
+  <input type="text" id="string2" placeholder="Entrez le deuxième mot">
+  <br>
+  <button onclick="checkAnagram()">Vérifier</button>
+
+  <div id="result"></div>
+
+  <script>
+    function isAnagram(str1, str2) {
+      const cleanStr1 = str1.replace(/\s+/g, '').toLowerCase();
+      const cleanStr2 = str2.replace(/\s+/g, '').toLowerCase();
+
+      const sortedStr1 = cleanStr1.split('').sort().join('');
+      const sortedStr2 = cleanStr2.split('').sort().join('');
+
+      return sortedStr1 === sortedStr2;
+    }
+
+    function checkAnagram() {
+      const input1 = document.getElementById("string1").value;
+      const input2 = document.getElementById("string2").value;
+      const result = document.getElementById("result");
+
+      if (!input1 || !input2) {
+        result.textContent = "❌ Veuillez entrer deux mots.";
+        result.style.color = "red";
+        return;
+      }
+
+      if (isAnagram(input1, input2)) {
+        result.textContent = "✅ Ce sont des anagrammes !";
+        result.style.color = "green";
+      } else {
+        result.textContent = "❌ Ce ne sont pas des anagrammes.";
+        result.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
