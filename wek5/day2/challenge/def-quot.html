@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recherche de GIFs Giphy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 250px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: teal;
+      color: white;
+      cursor: pointer;
+    }
+    .gif-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gif-box {
+      position: relative;
+      display: inline-block;
+    }
+    .gif-box img {
+      max-width: 200px;
+      border-radius: 8px;
+    }
+    .gif-box button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: red;
+      font-size: 12px;
+      padding: 4px 6px;
+    }
+    #clearAll {
+      background: darkred;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔍 Chercher un GIF avec Giphy</h1>
+
+  <form id="gifForm">
+    <input type="text" id="searchInput" placeholder="Ex: soleil, chat..." required />
+    <button type="submit">Rechercher</button>
+  </form>
+
+  <div class="gif-container" id="gifContainer"></div>
+  <button id="clearAll">SUPPRIMER TOUT</button>
+
+  <script>
+    const API_KEY = "hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My";
+    const gifForm = document.getElementById("gifForm");
+    const searchInput = document.getElementById("searchInput");
+    const gifContainer = document.getElementById("gifContainer");
+    const clearAllBtn = document.getElementById("clearAll");
+
+    gifForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const searchTerm = searchInput.value.trim();
+      if (!searchTerm) return;
+
+      const url = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${encodeURIComponent(searchTerm)}&limit=1`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const gifUrl = data.data[0]?.images?.fixed_height?.url;
+
+        if (gifUrl) {
+          const gifBox = document.createElement("div");
+          gifBox.classList.add("gif-box");
+
+          const img = document.createElement("img");
+          img.src = gifUrl;
+
+          const delBtn = document.createElement("button");
+          delBtn.textContent = "SUPPRIMER";
+          delBtn.addEventListener("click", () => gifBox.remove());
+
+          gifBox.appendChild(img);
+          gifBox.appendChild(delBtn);
+          gifContainer.appendChild(gifBox);
+        } else {
+          alert("Aucun GIF trouvé pour cette recherche.");
+        }
+      } catch (error) {
+        console.error("Erreur lors de la récupération :", error);
+      }
+
+      searchInput.value = "";
+    });
+
+    clearAllBtn.addEventListener("click", () => {
+      gifContainer.innerHTML = "";
+    });
+  </script>
+
+</body>
+</html>

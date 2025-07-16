@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Exercice 1 
+        function compareToTen(num) {
+  return new Promise((resolve, reject) => {
+    if (num <= 10) {
+      resolve(`${num} est inférieur ou égal à 10`);
+    } else {
+      reject(`${num} est supérieur à 10`);
+    }
+  });
+}
+
+
+compareToTen(15)
+  .then(result => console.log(" Résolu :", result))
+  .catch(error => console.log(" Rejeté :", error));
+
+compareToTen(8)
+  .then(result => console.log(" Résolu :", result))
+  .catch(error => console.log(" Rejeté :", error));
+  //------------------------------------------------------------------
+  //  Exercice 2 
+  const delayedSuccess = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("succès");
+  }, 4000); 
+});
+
+delayedSuccess.then(result => console.log(" Après 4 sec :", result));
+//----------------------------------------------------------------------------------
+//Exercice 3
+
+const resolvedPromise = Promise.resolve(3);
+resolvedPromise.then(value => console.log(" Résolu avec :", value));
+
+
+const rejectedPromise = Promise.reject("Bouh !");
+rejectedPromise.catch(error => console.log(" Rejeté avec :", error));
+
+
+    </script>
+</body>
+</html>
